@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MenuPrincipal</title>
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+</head>
+<body>
+    <h1>Bienvenido a la página principal de Ventas</h1>
+    <a href="{% url 'lista_clientes' %}" class= 'boton'>Ver lista de clientes</a>
+    <a href="{% url 'listar_tiendas' %}" class= 'boton'>Ver lista de tiendas</a>
+    <a href="{% url 'listar_compras' %}" class= 'boton'>Ver lista de compras</a>
+    <a href="/admin" class="boton">Panel de Django</a>
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+    <button type="submit">Cerrar sesión</button>
+</form>
+
+</body>
+</html>
